@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { SITE_CONFIG } from "@/lib/constants";
 import Link from "next/link";
+import ScrollToTop from "@/components/layout/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -25,6 +26,8 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.variable} font-sans bg-slate-50 text-slate-900 min-h-screen flex flex-col`}>
+        {/* Helper de scroll */}
+        <ScrollToTop />
         {/* Componente de Navegación */}
         <Navbar />
 
