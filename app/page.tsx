@@ -1,104 +1,149 @@
 // src/app/page.tsx
+"use client";
+
+import React from "react";
 import Link from "next/link";
-import { SITE_CONFIG, FEATURE_FLAGS } from "@/lib/constants";
-import { ArrowRight, BookOpen, Users, Newspaper, ShieldCheck } from "lucide-react";
+import { 
+  ArrowRight, 
+  ShieldCheck, 
+  GraduationCap, 
+  Users, 
+  ChevronRight,
+  Star
+} from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-20 pb-20">
-      {/* SECTION: HERO */}
-      <section className="relative overflow-hidden bg-white rounded-3xl shadow-xl border border-slate-100">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent -z-10" />
-        <div className="px-8 py-16 md:py-24 lg:flex lg:items-center lg:gap-12">
-          <div className="lg:w-1/2">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-blue-950 tracking-tight leading-tight">
-              Excelencia en la <span className="text-blue-600">Enfermería Escolar</span>
-            </h1>
-            <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
-              Portal oficial de la Comisión de Enfermería Escolar de la {SITE_CONFIG.province}. 
-              Impulsando la salud, la prevención y el cuidado integral en el ámbito educativo.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link 
-                href="/quienes-somos" 
-                className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-200 flex items-center gap-2"
-              >
-                Conocenos <ArrowRight size={18} />
-              </Link>
-              <Link 
-                href="/proyectos" 
-                className="bg-white border-2 border-slate-200 hover:border-blue-600 hover:text-blue-600 text-slate-700 px-8 py-4 rounded-xl font-bold transition-all"
-              >
-                Ver Proyectos
-              </Link>
-            </div>
+    <div className="flex flex-col gap-24 pb-20">
+      
+      {/* 1. HERO DE CONVERSIÓN: IMPACTO INMEDIATO */}
+      <section className="relative pt-12 md:pt-20">
+        <div className="max-w-5xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-black uppercase tracking-wider mb-6">
+            <Star size={14} fill="currentColor" />
+            Lanzamiento Ciclo Académico 2026
           </div>
-          <div className="hidden lg:block lg:w-1/2">
-            <div className="bg-blue-100 h-[400px] rounded-2xl flex items-center justify-center border-2 border-dashed border-blue-200">
-              {/* Espacio para imagen institucional de alta resolución */}
-              <p className="text-blue-400 font-medium">Imagen Institucional / Fotografía Profesional</p>
+          
+          <h1 className="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
+            Liderá el cambio sanitario en las <span className="text-blue-600">instituciones educativas.</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-slate-500 max-w-3xl leading-relaxed mb-10">
+            Formación estratégica para enfermeros que buscan transformar la salud escolar en la Provincia de Buenos Aires y el país.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link 
+              href="/capacitaciones" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-5 rounded-2xl font-black text-xl transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-3 group"
+            >
+              Ver Formación Profesional 2026
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link 
+              href="/quienes-somos" 
+              className="bg-white hover:bg-slate-50 text-slate-900 border-2 border-slate-200 px-8 py-5 rounded-2xl font-black text-xl transition-all flex items-center justify-center"
+            >
+              Conocer el Campus
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. STATS / TRUST BAR: AUTORIDAD RÁPIDA */}
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 border-y border-slate-100 py-12">
+        <div className="flex items-start gap-4">
+          <div className="bg-blue-50 p-3 rounded-xl text-blue-600">
+            <ShieldCheck size={28} />
+          </div>
+          <div>
+            <h3 className="font-black text-slate-900 uppercase text-sm tracking-tight">Respaldo Profesional</h3>
+            <p className="text-slate-500 text-sm">Contenidos basados en normativa legal vigente.</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-4">
+          <div className="bg-blue-50 p-3 rounded-xl text-blue-600">
+            <GraduationCap size={28} />
+          </div>
+          <div>
+            <h3 className="font-black text-slate-900 uppercase text-sm tracking-tight">Título Privado</h3>
+            <p className="text-slate-500 text-sm">Certificación de especialización por el Campus.</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-4">
+          <div className="bg-blue-50 p-3 rounded-xl text-blue-600">
+            <Users size={28} />
+          </div>
+          <div>
+            <h3 className="font-black text-slate-900 uppercase text-sm tracking-tight">Comunidad Activa</h3>
+            <p className="text-slate-500 text-sm">Red de enfermeros escolares de toda la provincia.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. SECCIÓN DE PRODUCTO: EL "GANCHO" HACIA EL CURSO */}
+      <section className="bg-slate-900 rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden">
+        {/* Decoración sutil */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 skew-x-12 translate-x-20" />
+        
+        <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-blue-400 font-black uppercase tracking-widest text-sm">Nuestra Formación Estrella</span>
+            <h2 className="text-3xl md:text-5xl font-black mt-4 mb-6 leading-tight">
+              Especialización en Enfermería y Salud Escolar
+            </h2>
+            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+              No es un curso asistencial. Es un programa de gestión diseñado para que puedas implementar gabinetes, diseñar protocolos y liderar equipos en escuelas.
+            </p>
+            <ul className="space-y-4 mb-10">
+              {["6 meses de cursada híbrida", "18 módulos técnicos exhaustivos", "Trabajo final de implementación real"].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 font-bold text-slate-200">
+                  <div className="bg-blue-500 rounded-full p-1"><ChevronRight size={14} className="text-white"/></div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link 
+              href="/capacitaciones" 
+              className="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-xl font-black hover:bg-blue-50 transition-colors"
+            >
+              Explorar Programa Completo
+              <ArrowRight size={20} />
+            </Link>
+          </div>
+          
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
+            <div className="space-y-6">
+                <div className="pb-6 border-b border-white/10">
+                    <p className="text-blue-400 font-black text-xs uppercase tracking-widest mb-2">Próxima Cohorte</p>
+                    <p className="text-2xl font-bold italic">Lunes 6 de Abril, 2026</p>
+                </div>
+                <div className="space-y-4">
+                    <p className="text-slate-400 text-sm">Esta formación está diseñada para responder a las nuevas problemáticas escolares: salud mental, ESI e inclusión social.</p>
+                    <div className="flex items-center gap-2 text-emerald-400 font-bold">
+                        <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                        Inscripciones abiertas con beneficio anticipado
+                    </div>
+                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION: ACCESOS RÁPIDOS (CARDS) */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Card: Investigación */}
-        <Link href="/investigacion" className="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all">
-          <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-            <BookOpen size={24} />
-          </div>
-          <h3 className="mt-6 text-xl font-bold text-slate-900">Investigación</h3>
-          <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-            Acceso a papers, protocolos y estudios científicos actualizados sobre la salud escolar.
-          </p>
+      {/* 4. CIERRE: LLAMADO A LA ACCIÓN FINAL */}
+      <section className="text-center max-w-3xl mx-auto space-y-8">
+        <h2 className="text-4xl font-black text-slate-900">¿Listo para dar el siguiente paso en tu carrera profesional?</h2>
+        <p className="text-slate-500 text-lg">
+          Unite al Campus Profesional y formá parte de la elite de enfermería que está redefiniendo el cuidado en el ámbito educativo argentino.
+        </p>
+        <Link 
+          href="/capacitaciones" 
+          className="inline-block bg-slate-900 text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-slate-800 transition-all shadow-lg"
+        >
+          Inscribirme ahora
         </Link>
-
-        {/* Card: Actualidad */}
-        <Link href="/actualidad" className="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all">
-          <div className="w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-            <Newspaper size={24} />
-          </div>
-          <h3 className="mt-6 text-xl font-bold text-slate-900">Actualidad</h3>
-          <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-            Novedades de la Comisión, noticias del sector y actualizaciones ministeriales.
-          </p>
-        </Link>
-
-        {/* Card Dinámica: Capacitaciones o Proyectos */}
-        {FEATURE_FLAGS.ENABLE_CAPACITACIONES ? (
-          <Link href="/capacitaciones" className="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all">
-            <div className="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-              <ShieldCheck size={24} />
-            </div>
-            <h3 className="mt-6 text-xl font-bold text-slate-900">Capacitaciones</h3>
-            <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-              Formación continua y cursos certificados para profesionales del área.
-            </p>
-          </Link>
-        ) : (
-          <Link href="/quienes-somos" className="group p-8 bg-white rounded-2xl border border-slate-200 hover:border-blue-500 hover:shadow-xl transition-all">
-            <div className="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
-              <Users size={24} />
-            </div>
-            <h3 className="mt-6 text-xl font-bold text-slate-900">Institucional</h3>
-            <p className="mt-3 text-slate-500 text-sm leading-relaxed">
-              Conoce nuestra misión, visión y los objetivos que persigue la Comisión.
-            </p>
-          </Link>
-        )}
       </section>
 
-      {/* SECTION: BREVE RESUMEN */}
-      <section className="bg-blue-950 text-white rounded-3xl p-8 md:p-12">
-        <div className="max-w-3xl">
-          <h2 className="text-3xl font-bold">Nuestra Misión</h2>
-          <p className="mt-6 text-blue-100 text-lg leading-relaxed">
-            Propiciamos un espacio de encuentro, debate y construcción técnica para los profesionales de enfermería que desempeñan sus tareas en instituciones educativas, garantizando el derecho a la salud de las infancias y juventudes.
-          </p>
-        </div>
-      </section>
     </div>
   );
 }
