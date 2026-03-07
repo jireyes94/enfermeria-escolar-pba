@@ -45,7 +45,7 @@ export default function CapacitacionesPage() {
         <div className="max-w-5xl mx-auto px-4 text-center">
           <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">Campus Profesional</span>
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mt-4 mb-6 leading-tight">
-            Formación Profesional en <br className="hidden md:block"/> Enfermería y Salud Escolar
+            Diplomatura Profesional en <br className="hidden md:block"/> Enfermería y Salud Escolar
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 font-medium italic mb-12">
             "Liderazgo, Gestión del Cuidado y Transformación en la Comunidad Educativa"
@@ -58,7 +58,7 @@ export default function CapacitacionesPage() {
             </div>
             <div>
                 <p className="text-xs font-bold text-slate-400 uppercase">Carga Horaria</p>
-                <p className="text-lg font-bold text-slate-800">120 Horas</p>
+                <p className="text-lg font-bold text-slate-800">140 Horas</p>
             </div>
             <div>
                 <p className="text-xs font-bold text-slate-400 uppercase">Modalidad</p>
@@ -78,7 +78,7 @@ export default function CapacitacionesPage() {
             <h2 className="text-3xl font-black text-slate-900 mb-6">La Enfermería Escolar no es asistencia. Es liderazgo sanitario.</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>La realidad educativa exige profesionales capaces de intervenir en salud mental, inclusión, emergencias y diseño de políticas de cuidado.</p>
-                <p className="font-bold text-slate-900">Esta formación te prepara para crear el rol, proponer el servicio y liderar proyectos estratégicos.</p>
+                <p className="font-bold text-slate-900">Esta diplomatura te prepara para crear el rol, proponer el servicio y liderar proyectos estratégicos.</p>
             </div>
             <div className="mt-8 grid grid-cols-1 gap-3">
                 {["Diseñar gabinetes de enfermería escolar", "Elaborar protocolos institucionales completos", "Liderar equipos interdisciplinarios", "Gestionar emergencias con enfoque organizacional"].map((item, i) => (
@@ -114,7 +114,7 @@ export default function CapacitacionesPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-slate-900 mb-4">Programa Académico</h2>
-            <p className="text-slate-500 font-medium">Cronograma detallado de formación especializada</p>
+            <p className="text-slate-500 font-medium">Cronograma detallado de diplomatura especializada</p>
           </div>
 
           <div className="space-y-3">
@@ -176,7 +176,7 @@ export default function CapacitacionesPage() {
 
             <div className="relative z-10 flex flex-col items-center text-center">
               <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight max-w-3xl">
-                Convertite en referente en un <span className="text-blue-400">campo emergente</span>
+                Convertite en referente en un <span className="text-blue-400">campo emergente.</span>
               </h2>
               
               <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">

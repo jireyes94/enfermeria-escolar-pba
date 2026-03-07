@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { SITE_CONFIG } from "@/lib/constants";
-import Link from "next/link";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import Footer from "@/components/layout/Footer";
 
@@ -17,6 +16,11 @@ export const metadata: Metadata = {
   },
   description: "Portal oficial de la Comisión de Enfermería Escolar de la Provincia de Buenos Aires. Información, investigación y proyectos.",
   keywords: ["Enfermería Escolar", "Buenos Aires", "Salud Escolar", "Capacitaciones Enfermería"],
+  icons: {
+    icon: '/favicon.ico', // O el nombre que le hayas puesto a tu archivo en /public
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png', // Opcional: para dispositivos iOS
+  },
 };
 
 export default function RootLayout({
